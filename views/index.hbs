@@ -1,10 +1,6 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
 
-<h2>Subscriber Emails</h2>
-
-<ul>
-  {{#each subscribers}}
-    <li>{{this.first_name}}</li>
-  {{/each}}
-</ul>
+<form action="./cassandra">
+    <input type="submit" value="Cassandra" />
+</form>
