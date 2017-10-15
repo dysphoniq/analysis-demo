@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var cassandra = require('./routes/cassandra');
+var couch = require('./routes/couch');
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/cassandra', cassandra);
+app.use('/couch', couch);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
