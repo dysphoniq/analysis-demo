@@ -9,6 +9,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var cassandra = require('./routes/cassandra');
 var couch = require('./routes/couch');
+var sql = require('./routes/sql')
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/cassandra', cassandra);
 app.use('/couch', couch);
+app.use('/sql', sql);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
