@@ -6,3 +6,23 @@ body {
 a {
   color: #00B7FF;
 }
+
+form {
+  display: inline;
+}
+
+.button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.buttons {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.title {
+  padding-top: 10px;
+  text-align: center;
+}
