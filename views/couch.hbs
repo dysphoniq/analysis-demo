@@ -1,2 +1,32 @@
-<h1>{{title}}</h1>
-TODO
+<h3>Add Customer</h3>
+<form method="post" action="/couch/customer/add">
+    <input type="text" name="name" placeholder="Add Name">
+    <input type="text" name="email" placeholder="Add Email">
+    <input type="submit" value="Submit">
+</form>
+<h3>
+    Customers
+</h3>
+<ul>
+    {{#each customers}}
+    <li>
+        <h4>
+            {{this.value.name}}
+        </h4>
+        <p>
+            {{this.value.email}}
+        </p>
+        <form action="/couch/customer/delete/{{this.key}}" method="post">
+            <input type="hidden" value="{{this.value.rev}}" name="rev">
+            <input type="submit" value="Delete Document">
+        </form>
+        <form action="/couch/customer/update/{{this.key}}" method="post">
+            <input type="hidden" value="{{this.value.rev}}" name="rev">
+            <input type="text" value="{{this.value.name}}" name="name">
+            <input type="text" value="{{this.value.email}}" name="email">
+            <input type="submit" value="Update">
+        </form>
+    </li>
+    {{/each}}
+
+</ul>
