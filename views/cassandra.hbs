@@ -1,10 +1,26 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
 
-<h2>Subscriber Emails</h2>
+<h1 class="title">{{title}}</h1>
+
+<h2 class="subtitle">Subscriber Emails</h2>
 
 <ul>
-  {{#each subscribers}}
-    <li>{{this.first_name}}</li>
+  {{#each entries}}
+  <form class="entry emails" id="form_{{this.id}}">
+    {{#each this}}
+      <label for="{{@key}}" class="key">{{@key}}</label>
+      <input type="text" name="{{@key}}" value="{{this}}" />
+    {{/each}}
+    <button class="button submit is-small is-info" id="submit_{{this.id}}">Submit</button>
+    <span class="close pull-right" id="close_{{this.id}}">&#10799</span>
+  </form>
   {{/each}}
+  <form class="entry" id="new_email">
+    {{#each entries.[1]}}
+      <label for="{{@key}}" class="key">{{@key}}</label>
+      <input type="text" name="{{@key}}" value="" />
+    {{/each}}
+    <button class="button submit is-small is-info" id="add_button">Add</button>
+  </form>
 </ul>
+
+<script type="text/javascript" src="./javascripts/cassandra.js"></script>
