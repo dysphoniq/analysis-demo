@@ -22,7 +22,22 @@ form {
   display: flex;
 }
 
+.close:hover {
+  cursor: pointer;
+}
+
 .title {
   padding-top: 10px;
   text-align: center;
+}
+
+.entry {
+  padding: 3px 3px 3px 3px;
+  background-color: silver;
+  border: solid 1px black;
+  display: block;
+}
+
+.key {
+  font-style: bold;
 }
